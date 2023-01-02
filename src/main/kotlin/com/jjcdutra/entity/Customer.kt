@@ -1,7 +1,21 @@
 package com.jjcdutra.entity
 
-data class Customer(
+class Customer(
     val id: String,
-    val name: String,
-    val address: String
-)
+    private var name: String,
+    private var address: String,
+    private var active: Boolean = true
+) {
+
+    fun changeName(name: String) {
+        this.name = name
+    }
+
+    fun activate() {
+        this.active = true
+    }
+
+    fun deactivate() {
+        this.active = false
+    }
+}
