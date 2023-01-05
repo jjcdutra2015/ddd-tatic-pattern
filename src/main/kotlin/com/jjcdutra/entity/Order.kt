@@ -19,7 +19,7 @@ class Order(
     }
 
     private fun total(): BigDecimal {
-        return items.map { it.price }.reduce { acc, price -> acc + price }
+        return items.map { it.orderItemTotal() }.reduce { acc, price -> acc + price }
     }
 
     private fun validate(): Boolean {
@@ -31,6 +31,9 @@ class Order(
         }
         if (this.items.isEmpty()) {
             throw Exception("Items is required")
+        }
+        if (this.items.map { it.getQuantity() }.first { it == 0 } <= 0) {
+            throw Exception("Quantity must be greater than zero")
         }
         return true
     }

@@ -33,9 +33,20 @@ class OrderTest {
 
     @Test
     fun `should calculate total`() {
-        val item = OrderItem("i1", "Item 1", BigDecimal(100))
-        val order = Order("o1", "c1", listOf(item))
+        val item = OrderItem("i1", "Item 1", BigDecimal(100), "p1", 2)
+        val item2 = OrderItem("i1", "Item 1", BigDecimal(200), "p1", 2)
+        val order = Order("o1", "c1", listOf(item, item2))
 
-        assertEquals(BigDecimal(100), order.getTotal())
+        assertEquals(BigDecimal(600), order.getTotal())
+    }
+
+    @Test
+    fun `should throw error if item qte is less or equal zero`() {
+        val exception = assertThrows<Exception> {
+            val item1 = OrderItem("i1", "Item 1", BigDecimal(100), "p1", 1)
+            val item2 = OrderItem("i1", "Item 1", BigDecimal(100), "p1", 0)
+            Order("o1", "c1", listOf(item1, item2))
+        }
+        assertEquals("Quantity must be greater than zero", exception.message)
     }
 }
