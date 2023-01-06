@@ -32,7 +32,7 @@ class Order(
         if (this.items.isEmpty()) {
             throw Exception("Items is required")
         }
-        if (this.items.map { it.getQuantity() }.first { it == 0 } <= 0) {
+        if (this.items.any{ orderItem -> orderItem.getQuantity() <= 0 }) {
             throw Exception("Quantity must be greater than zero")
         }
         return true
