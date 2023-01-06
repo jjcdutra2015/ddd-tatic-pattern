@@ -3,7 +3,8 @@ package com.jjcdutra.entity
 class Customer(
     private val id: String,
     private var name: String,
-    private var active: Boolean = false
+    private var active: Boolean = false,
+    private var rewardPoints: Int = 0
 ) {
     private var address: Address? = null
 
@@ -15,7 +16,11 @@ class Customer(
         validate()
     }
 
+    fun getId(): String = this.id
+
     fun getName(): String = this.name
+
+    fun getRewardPoints(): Int = this.rewardPoints
 
     fun changeName(name: String) {
         this.name = name
@@ -44,5 +49,9 @@ class Customer(
 
     fun isActive(): Boolean {
         return this.active
+    }
+
+    fun addRewardPoints(point: Int) {
+        this.rewardPoints += point
     }
 }

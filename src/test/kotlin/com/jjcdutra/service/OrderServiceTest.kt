@@ -1,5 +1,6 @@
 package com.jjcdutra.service
 
+import com.jjcdutra.entity.Customer
 import com.jjcdutra.entity.Order
 import com.jjcdutra.entity.OrderItem
 import org.junit.jupiter.api.Assertions.*
@@ -19,5 +20,16 @@ class OrderServiceTest {
         val total = OrderService.total(listOf(order1, order2))
 
         assertEquals(BigDecimal(500), total)
+    }
+
+    @Test
+    fun `should place an order`() {
+        val customer = Customer("c1", "Customer 1")
+        val item = OrderItem("o1", "Item 1", BigDecimal(10), "p1", 1)
+
+        val order = OrderService.placeOrder(customer, listOf(item))
+
+        assertEquals(5, customer.getRewardPoints())
+        assertEquals(BigDecimal(10), order.getTotal())
     }
 }
