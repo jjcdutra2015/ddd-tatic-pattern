@@ -1,4 +1,4 @@
-package com.jjcdutra.repository
+package com.jjcdutra.domain.repository
 
 interface RepositoryInterface<T> {
     fun create(entity: T)
