@@ -1,8 +1,8 @@
-package com.jjcdutra.service
+package com.jjcdutra.domain.service
 
-import com.jjcdutra.entity.Customer
-import com.jjcdutra.entity.Order
-import com.jjcdutra.entity.OrderItem
+import com.jjcdutra.domain.entity.Customer
+import com.jjcdutra.domain.entity.Order
+import com.jjcdutra.domain.entity.OrderItem
 import java.math.BigDecimal
 
 class OrderService {

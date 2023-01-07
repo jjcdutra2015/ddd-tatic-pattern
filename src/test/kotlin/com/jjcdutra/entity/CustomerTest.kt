@@ -1,5 +1,7 @@
 package com.jjcdutra.entity
 
+import com.jjcdutra.domain.entity.Address
+import com.jjcdutra.domain.entity.Customer
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -58,5 +60,17 @@ class CustomerTest() {
         }
 
         assertEquals("Address is mandatory to activate a customer", exception.message)
+    }
+
+    @Test
+    fun `should add reward points`() {
+        val customer = Customer("c1", "Customer 1")
+        assertEquals(0, customer.getRewardPoints())
+
+        customer.addRewardPoints(10)
+        assertEquals(10, customer.getRewardPoints())
+
+        customer.addRewardPoints(10)
+        assertEquals(20, customer.getRewardPoints())
     }
 }

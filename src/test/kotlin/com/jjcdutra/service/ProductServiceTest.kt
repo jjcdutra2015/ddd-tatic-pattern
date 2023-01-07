@@ -1,6 +1,7 @@
 package com.jjcdutra.service
 
-import com.jjcdutra.entity.Product
+import com.jjcdutra.domain.entity.Product
+import com.jjcdutra.domain.service.ProductService
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.math.BigDecimal

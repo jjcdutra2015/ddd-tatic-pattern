@@ -1,5 +1,7 @@
 package com.jjcdutra.entity
 
+import com.jjcdutra.domain.entity.Order
+import com.jjcdutra.domain.entity.OrderItem
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

@@ -1,5 +1,6 @@
 package com.jjcdutra.entity
 
+import com.jjcdutra.domain.entity.Product
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
