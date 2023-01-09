@@ -1,4 +1,4 @@
-package com.jjcdutra.service
+package com.jjcdutra.domain.service
 
 import com.jjcdutra.domain.entity.Product
 import com.jjcdutra.domain.service.ProductService
