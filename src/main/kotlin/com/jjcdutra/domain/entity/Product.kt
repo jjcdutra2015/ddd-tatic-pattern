@@ -3,9 +3,9 @@ package com.jjcdutra.domain.entity
 import java.math.BigDecimal
 
 class Product(
-    private val id: String,
-    private var name: String,
-    private var price: BigDecimal
+    var id: String,
+    var name: String,
+    var price: BigDecimal
 ) {
     init {
         validate()
@@ -29,16 +29,8 @@ class Product(
         validate()
     }
 
-    fun getName(): String {
-        return this.name
-    }
-
     fun changePrice(price: BigDecimal) {
         this.price = price
         validate()
-    }
-
-    fun getPrice(): BigDecimal {
-        return this.price
     }
 }

@@ -37,7 +37,7 @@ class ProductTest {
         val product = Product("1", "Product", BigDecimal(100))
         product.changeName("Prd")
 
-        assertEquals("Prd", product.getName())
+        assertEquals("Prd", product.id)
     }
 
     @Test
@@ -45,6 +45,6 @@ class ProductTest {
         val product = Product("1", "Product", BigDecimal(100))
         product.changePrice(BigDecimal(150))
 
-        assertEquals(BigDecimal(150), product.getPrice())
+        assertEquals(BigDecimal(150), product.price)
     }
 }

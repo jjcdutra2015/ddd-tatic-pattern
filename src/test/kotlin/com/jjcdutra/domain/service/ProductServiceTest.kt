@@ -17,7 +17,7 @@ class ProductServiceTest {
 
         ProductService.increasePrice(products, 100)
 
-        assertEquals(BigDecimal(20), product1.getPrice())
-        assertEquals(BigDecimal(40), product2.getPrice())
+        assertEquals(BigDecimal(20), product1.price)
+        assertEquals(BigDecimal(40), product2.price)
     }
 }

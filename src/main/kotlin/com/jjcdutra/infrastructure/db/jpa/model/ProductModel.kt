@@ -8,7 +8,6 @@ import java.math.BigDecimal
 data class ProductModel(
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     val id: String,
 
