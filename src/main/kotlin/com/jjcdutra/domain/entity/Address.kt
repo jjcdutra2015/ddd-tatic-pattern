@@ -1,10 +1,10 @@
 package com.jjcdutra.domain.entity
 
-class Address(
-    private val street: String,
-    private val number: Int,
-    private val zip: String,
-    private val city: String
+data class Address(
+    val street: String,
+    val number: Int,
+    val zip: String,
+    val city: String
 ) {
 
     init {

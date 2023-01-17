@@ -1,8 +1,6 @@
 package com.jjcdutra.infrastructure.repository
 
 import com.jjcdutra.infrastructure.db.jpa.model.ProductModel
-import org.springframework.data.repository.CrudRepository
-import org.springframework.stereotype.Repository
+import org.springframework.data.jpa.repository.JpaRepository
 
-@Repository
-interface ProductModelRepository : CrudRepository<ProductModel, String>
+interface ProductModelRepository : JpaRepository<ProductModel, String>

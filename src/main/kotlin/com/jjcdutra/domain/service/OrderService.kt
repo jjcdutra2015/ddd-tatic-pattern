@@ -15,7 +15,7 @@ class OrderService {
             if (items.isEmpty()) {
                 throw Exception("Order must have at least one item")
             }
-            val order = Order("id", customer.getId(), items)
+            val order = Order("id", customer.id, items)
             customer.addRewardPoints(order.getTotal().toInt() / 2)
             return order
         }

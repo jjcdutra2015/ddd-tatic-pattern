@@ -19,14 +19,13 @@ class ProductRepository(
     }
 
     override fun update(entity: Product) {
-        val product = repository.findById(entity.id).get()
-        repository.save(
-            ProductModel(
-                id = product.id,
-                name = product.name,
-                price = product.price
-            )
+        val productFind = repository.findById(entity.id).get()
+        val product = productFind.copy(
+            id = entity.id,
+            name = entity.name,
+            price = entity.price
         )
+        repository.save(product)
     }
 
     override fun find(id: String): Product {

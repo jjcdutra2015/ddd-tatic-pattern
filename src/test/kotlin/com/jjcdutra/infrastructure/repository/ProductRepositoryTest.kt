@@ -58,8 +58,8 @@ class ProductRepositoryTest {
         val productUpdate = repositoryModel.findById(product.id).get()
 
         assertNotNull(productUpdate)
-        assertEquals(productModel.name, productUpdate.name)
-        assertEquals(productModel.price, productUpdate.price)
+        assertEquals("Product 2", productUpdate.name)
+        assertEquals(BigDecimal("20.00"), productUpdate.price)
     }
 
     @Test

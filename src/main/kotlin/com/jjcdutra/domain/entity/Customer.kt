@@ -1,26 +1,20 @@
 package com.jjcdutra.domain.entity
 
-class Customer(
-    private val id: String,
-    private var name: String,
-    private var active: Boolean = false,
-    private var rewardPoints: Int = 0
+data class Customer(
+    val id: String,
+    var name: String,
+    var active: Boolean = false,
+    var rewardPoints: Int = 0,
+    var address: Address? = null
 ) {
-    private var address: Address? = null
 
-    fun setAddress(address: Address) {
+    fun changeAddress(address: Address) {
         this.address = address
     }
 
     init {
         validate()
     }
-
-    fun getId(): String = this.id
-
-    fun getName(): String = this.name
-
-    fun getRewardPoints(): Int = this.rewardPoints
 
     fun changeName(name: String) {
         this.name = name

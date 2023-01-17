@@ -30,7 +30,7 @@ class OrderServiceTest {
 
         val order = OrderService.placeOrder(customer, listOf(item))
 
-        assertEquals(5, customer.getRewardPoints())
+        assertEquals(5, customer.rewardPoints)
         assertEquals(BigDecimal(10), order.getTotal())
     }
 }
