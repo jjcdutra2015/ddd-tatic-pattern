@@ -3,19 +3,15 @@ package com.jjcdutra.domain.entity
 import java.math.BigDecimal
 
 class Order(
-    private val id: String,
-    private val customerId: String,
-    private val items: List<OrderItem> = listOf(),
-    private var total: BigDecimal = BigDecimal.ZERO
+    val id: String,
+    val customerId: String,
+    val items: List<OrderItem> = listOf(),
+    var total: BigDecimal = BigDecimal.ZERO
 ) {
 
     init {
         validate()
         this.total = total()
-    }
-
-    fun getTotal(): BigDecimal {
-        return this.total
     }
 
     private fun total(): BigDecimal {
@@ -32,7 +28,7 @@ class Order(
         if (this.items.isEmpty()) {
             throw Exception("Items is required")
         }
-        if (this.items.any{ orderItem -> orderItem.getQuantity() <= 0 }) {
+        if (this.items.any { orderItem -> orderItem.quantity <= 0 }) {
             throw Exception("Quantity must be greater than zero")
         }
         return true

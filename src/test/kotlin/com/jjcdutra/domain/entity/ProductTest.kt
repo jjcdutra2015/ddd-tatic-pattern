@@ -37,7 +37,7 @@ class ProductTest {
         val product = Product("1", "Product", BigDecimal(100))
         product.changeName("Prd")
 
-        assertEquals("Prd", product.id)
+        assertEquals("Prd", product.name)
     }
 
     @Test

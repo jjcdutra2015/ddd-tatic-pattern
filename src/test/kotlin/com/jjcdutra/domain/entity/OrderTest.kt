@@ -39,7 +39,7 @@ class OrderTest {
         val item2 = OrderItem("i1", "Item 1", BigDecimal(200), "p1", 2)
         val order = Order("o1", "c1", listOf(item, item2))
 
-        assertEquals(BigDecimal(600), order.getTotal())
+        assertEquals(BigDecimal(600), order.total)
     }
 
     @Test
