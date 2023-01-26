@@ -29,7 +29,7 @@ class OrderRepositoryTest {
 
     @BeforeEach
     fun setUp() {
-        orderRepository = OrderRepository(orderModelRepository)
+        orderRepository = OrderRepository(orderModelRepository, customerModelRepository, productModelRepository)
         customerRepository = CustomerRepository(customerModelRepository)
         productRepository = ProductRepository(productModelRepository)
         orderModelRepository.deleteAll()
@@ -39,6 +39,32 @@ class OrderRepositoryTest {
 
     @Test
     fun should_create_an_order() {
+        val customer = Customer(UUID.randomUUID().toString(), "Customer")
+        val address = Address("street", 1, "28640000", "city")
+        customer.changeAddress(address)
+        customerRepository.create(customer)
+
+        val product = Product(UUID.randomUUID().toString(), "Product", BigDecimal("10.00"))
+        productRepository.create(product)
+
+        val item = OrderItem(UUID.randomUUID().toString(), product.name, product.price, product.id, 2)
+
+        val order = Order(UUID.randomUUID().toString(), customer.id, listOf(item))
+
+        orderRepository.create(order)
+
+        val orderModel = orderModelRepository.findById(order.id).get()
+
+        assertNotNull(order)
+        assertEquals(order.id, orderModel.id)
+        assertEquals(order.customerId, orderModel.customer.id)
+        assertEquals(order.total, orderModel.total)
+        assertEquals(1, orderModel.items.size)
+    }
+
+    @Test
+    fun should_update_an_order_when_information_an_id() {
+
         val customer = Customer(UUID.randomUUID().toString(), "Customer")
         val address = Address("street", 1, "28640000", "city")
         customer.changeAddress(address)
@@ -59,5 +85,68 @@ class OrderRepositoryTest {
         assertEquals(order.id, orderModel.id)
         assertEquals(order.customerId, orderModel.customer.id)
         assertEquals(1, orderModel.items.size)
+
+        val product2 = Product(UUID.randomUUID().toString(), "Product 2", BigDecimal("20"))
+        productRepository.create(product2)
+
+        val item2 = OrderItem(UUID.randomUUID().toString(), product2.name, product2.price, product2.id, 4)
+
+        val order2 = Order(order.id, order.customerId, listOf(item, item2))
+
+        orderRepository.update(order2)
+
+        val orderUpdated = orderModelRepository.findById(order.id).get()
+
+        assertNotNull(orderUpdated)
+        assertEquals(order.id, orderUpdated.id)
+        assertEquals(order.customerId, orderUpdated.customer.id)
+        assertEquals(BigDecimal("100.00"), orderUpdated.total)
+        assertEquals(2, orderUpdated.items.size)
+    }
+
+    @Test
+    fun should_find_a_order_by_informing_an_id() {
+        val customer = Customer(UUID.randomUUID().toString(), "Customer")
+        val address = Address("street", 1, "28640000", "city")
+        customer.changeAddress(address)
+        customerRepository.create(customer)
+
+        val product = Product(UUID.randomUUID().toString(), "Product", BigDecimal("10.00"))
+        productRepository.create(product)
+
+        val item = OrderItem(UUID.randomUUID().toString(), product.name, product.price, product.id, 2)
+
+        val order = Order(UUID.randomUUID().toString(), customer.id, listOf(item))
+
+        orderRepository.create(order)
+
+        val orderFind = orderRepository.find(order.id)
+
+        assertNotNull(orderFind)
+        assertEquals(order.id, orderFind.id)
+        assertEquals(order.customerId, orderFind.customerId)
+        assertEquals(order.items.size, orderFind.items.size)
+    }
+
+    @Test
+    fun should_find_all_order() {
+        val customer = Customer(UUID.randomUUID().toString(), "Customer")
+        val address = Address("street", 1, "28640000", "city")
+        customer.changeAddress(address)
+        customerRepository.create(customer)
+
+        val product = Product(UUID.randomUUID().toString(), "Product", BigDecimal("10.00"))
+        productRepository.create(product)
+
+        val item = OrderItem(UUID.randomUUID().toString(), product.name, product.price, product.id, 2)
+
+        val order = Order(UUID.randomUUID().toString(), customer.id, listOf(item))
+
+        orderRepository.create(order)
+
+        val orderList = orderRepository.findAll()
+
+        assertNotNull(orderList)
+        assertEquals(1, orderList.size)
     }
 }

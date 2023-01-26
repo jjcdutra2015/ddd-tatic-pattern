@@ -14,10 +14,6 @@ data class OrderItemModel(
     @JoinColumn(name = "product_id")
     val product: ProductModel,
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    val order: OrderModel,
-
     @Column(nullable = false)
     val quantity: Int,
 

@@ -5,7 +5,7 @@ import java.math.BigDecimal
 class Order(
     val id: String,
     val customerId: String,
-    val items: List<OrderItem> = listOf(),
+    var items: List<OrderItem> = listOf(),
     var total: BigDecimal = BigDecimal.ZERO
 ) {
 
