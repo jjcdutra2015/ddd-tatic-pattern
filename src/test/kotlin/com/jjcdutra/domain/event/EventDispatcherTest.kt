@@ -13,7 +13,10 @@ class EventDispatcherTest {
 
         eventDispatcher.register("ProductCreatedEvent", eventHandler)
 
-        assertNotNull(eventDispatcher.getEventHanlders["ProductCreateEvent"])
-        assertEquals(1, eventDispatcher.getEventHanlders.size)
+        val eventHandlers = eventDispatcher.getEventHandlers()
+
+
+        assertNotNull(eventHandlers["ProductCreatedEvent"])
+        assertEquals(1, eventDispatcher.getEventHandlers().size)
     }
 }
