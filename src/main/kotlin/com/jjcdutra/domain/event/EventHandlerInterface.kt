@@ -1,5 +1,5 @@
 package com.jjcdutra.domain.event
 
-interface EventHandlerInterface<T> : EventInterface {
-    fun handle(event: T)
+interface EventHandlerInterface<out T : EventInterface> {
+    fun handle(event: @UnsafeVariance T)
 }
