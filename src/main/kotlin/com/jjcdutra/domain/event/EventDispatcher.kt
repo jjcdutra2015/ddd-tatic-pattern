@@ -4,7 +4,7 @@ class EventDispatcher : EventDispatcherInterface {
 
     private val eventHandlers: MutableMap<String, EventHandlerInterface<EventInterface>> = mutableMapOf()
 
-    fun getEventHandlers() : Map<String, EventHandlerInterface<EventInterface>> {
+    fun getEventHandlers(): Map<String, EventHandlerInterface<EventInterface>> {
         return eventHandlers
     }
 
@@ -19,10 +19,12 @@ class EventDispatcher : EventDispatcherInterface {
     }
 
     override fun unregister(eventName: String, eventHandler: EventHandlerInterface<EventInterface>) {
-        TODO("Not yet implemented")
+        if (this.eventHandlers[eventName] != null) {
+            this.eventHandlers.remove(eventName)
+        }
     }
 
     override fun unregisterAll() {
-        TODO("Not yet implemented")
+        this.eventHandlers.clear()
     }
 }
