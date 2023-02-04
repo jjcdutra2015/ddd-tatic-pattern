@@ -1,8 +1,8 @@
 package com.jjcdutra.domain.event
 
-import java.util.*
+import java.time.LocalDate
 
 interface EventInterface {
-    val dataTimeOccurred: Date
+    val dataTimeOccurred: LocalDate
     val eventData: Any
 }

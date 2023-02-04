@@ -9,7 +9,10 @@ class EventDispatcher : EventDispatcherInterface {
     }
 
     override fun notify(event: EventInterface) {
-        TODO("Not yet implemented")
+        val eventName = event.javaClass.simpleName
+        if (this.eventHandlers[eventName] != null) {
+            this.eventHandlers[eventName]?.handle(event)
+        }
     }
 
     override fun register(eventName: String, eventHandler: EventHandlerInterface<EventInterface>) {
