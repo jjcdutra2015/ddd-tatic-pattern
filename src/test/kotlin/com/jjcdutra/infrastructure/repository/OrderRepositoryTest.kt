@@ -6,6 +6,12 @@ import com.jjcdutra.domain.customer.entity.Customer
 import com.jjcdutra.domain.customer.valueobject.Address
 import com.jjcdutra.domain.entity.*
 import com.jjcdutra.domain.product.entity.Product
+import com.jjcdutra.infrastructure.customer.repository.jpa.CustomerModelRepository
+import com.jjcdutra.infrastructure.customer.repository.jpa.CustomerRepository
+import com.jjcdutra.infrastructure.order.repository.jpa.OrderModelRepository
+import com.jjcdutra.infrastructure.order.repository.jpa.OrderRepository
+import com.jjcdutra.infrastructure.product.repository.jpa.ProductModelRepository
+import com.jjcdutra.infrastructure.product.repository.jpa.ProductRepository
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

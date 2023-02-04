@@ -1,6 +1,5 @@
-package com.jjcdutra.infrastructure.repository
+package com.jjcdutra.infrastructure.product.repository.jpa
 
-import com.jjcdutra.infrastructure.db.jpa.model.ProductModel
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface ProductModelRepository : JpaRepository<ProductModel, String>

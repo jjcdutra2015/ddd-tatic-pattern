@@ -1,5 +1,6 @@
-package com.jjcdutra.infrastructure.db.jpa.model
+package com.jjcdutra.infrastructure.order.repository.jpa
 
+import com.jjcdutra.infrastructure.product.repository.jpa.ProductModel
 import jakarta.persistence.*
 import java.math.BigDecimal
 
@@ -7,19 +8,19 @@ import java.math.BigDecimal
 @Table(name = "order_items")
 data class OrderItemModel(
 
-    @Id
+        @Id
     val id: String,
 
-    @ManyToOne
+        @ManyToOne
     @JoinColumn(name = "product_id")
     val product: ProductModel,
 
-    @Column(nullable = false)
+        @Column(nullable = false)
     val quantity: Int,
 
-    @Column(nullable = false)
+        @Column(nullable = false)
     val name: String,
 
-    @Column(nullable = false)
+        @Column(nullable = false)
     val price: BigDecimal
 )

@@ -1,6 +1,8 @@
 package com.jjcdutra.infrastructure.repository
 
 import com.jjcdutra.domain.product.entity.Product
+import com.jjcdutra.infrastructure.product.repository.jpa.ProductModelRepository
+import com.jjcdutra.infrastructure.product.repository.jpa.ProductRepository
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.BeforeEach

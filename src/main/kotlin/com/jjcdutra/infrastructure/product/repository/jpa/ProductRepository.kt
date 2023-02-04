@@ -1,8 +1,7 @@
-package com.jjcdutra.infrastructure.repository
+package com.jjcdutra.infrastructure.product.repository.jpa
 
 import com.jjcdutra.domain.product.entity.Product
 import com.jjcdutra.domain.product.repository.ProductRepositoryInterface
-import com.jjcdutra.infrastructure.db.jpa.model.ProductModel
 import org.springframework.stereotype.Service
 
 @Service

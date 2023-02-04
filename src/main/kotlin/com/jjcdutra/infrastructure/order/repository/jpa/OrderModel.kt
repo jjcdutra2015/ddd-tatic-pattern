@@ -1,24 +1,23 @@
-package com.jjcdutra.infrastructure.db.jpa.model
+package com.jjcdutra.infrastructure.order.repository.jpa
 
+import com.jjcdutra.infrastructure.customer.repository.jpa.CustomerModel
 import jakarta.persistence.*
-import org.hibernate.annotations.NotFound
-import org.hibernate.annotations.NotFoundAction
 import java.math.BigDecimal
 
 @Entity
 @Table(name = "orders")
 data class OrderModel(
 
-    @Id
+        @Id
     val id: String,
 
-    @ManyToOne
+        @ManyToOne
     @JoinColumn(name = "customer_id")
     val customer: CustomerModel,
 
-    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+        @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     var items: List<OrderItemModel> = listOf(),
 
-    @Column(nullable = false)
+        @Column(nullable = false)
     var total: BigDecimal
 )

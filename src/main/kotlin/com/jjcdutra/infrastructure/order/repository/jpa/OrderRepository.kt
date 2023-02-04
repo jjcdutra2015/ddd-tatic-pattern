@@ -1,17 +1,17 @@
-package com.jjcdutra.infrastructure.repository
+package com.jjcdutra.infrastructure.order.repository.jpa
 
 import com.jjcdutra.domain.checkout.entity.Order
 import com.jjcdutra.domain.checkout.entity.OrderItem
 import com.jjcdutra.domain.checkout.repository.OrderRepositoryInterface
-import com.jjcdutra.infrastructure.db.jpa.model.OrderItemModel
-import com.jjcdutra.infrastructure.db.jpa.model.OrderModel
+import com.jjcdutra.infrastructure.customer.repository.jpa.CustomerModelRepository
+import com.jjcdutra.infrastructure.product.repository.jpa.ProductModelRepository
 import org.springframework.stereotype.Service
 
 @Service
 class OrderRepository(
-    val repository: OrderModelRepository,
-    val customerRepository: CustomerModelRepository,
-    val productRepository: ProductModelRepository
+        val repository: OrderModelRepository,
+        val customerRepository: CustomerModelRepository,
+        val productRepository: ProductModelRepository
 ) : OrderRepositoryInterface {
     override fun create(entity: Order) {
         val customerModel = customerRepository.findById(entity.customerId).get()

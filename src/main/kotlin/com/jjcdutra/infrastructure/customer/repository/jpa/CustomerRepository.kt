@@ -1,9 +1,8 @@
-package com.jjcdutra.infrastructure.repository
+package com.jjcdutra.infrastructure.customer.repository.jpa
 
 import com.jjcdutra.domain.customer.valueobject.Address
 import com.jjcdutra.domain.customer.entity.Customer
 import com.jjcdutra.domain.customer.repository.CustomerRepositoryInterface
-import com.jjcdutra.infrastructure.db.jpa.model.CustomerModel
 import org.springframework.stereotype.Service
 
 @Service

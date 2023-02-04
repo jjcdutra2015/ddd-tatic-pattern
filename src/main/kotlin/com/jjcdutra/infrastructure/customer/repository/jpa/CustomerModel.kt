@@ -1,4 +1,4 @@
-package com.jjcdutra.infrastructure.db.jpa.model
+package com.jjcdutra.infrastructure.customer.repository.jpa
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity

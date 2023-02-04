@@ -1,4 +1,4 @@
-package com.jjcdutra.infrastructure.db.jpa.model
+package com.jjcdutra.infrastructure.product.repository.jpa
 
 import jakarta.persistence.*
 import java.math.BigDecimal
