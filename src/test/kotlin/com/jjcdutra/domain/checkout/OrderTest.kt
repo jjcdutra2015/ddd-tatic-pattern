@@ -1,7 +1,7 @@
-package com.jjcdutra.domain.entity
+package com.jjcdutra.domain.checkout
 
-import com.jjcdutra.domain.entity.Order
-import com.jjcdutra.domain.entity.OrderItem
+import com.jjcdutra.domain.checkout.entity.Order
+import com.jjcdutra.domain.checkout.entity.OrderItem
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

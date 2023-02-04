@@ -1,4 +1,4 @@
-package com.jjcdutra.domain.entity
+package com.jjcdutra.domain.customer.valueobject
 
 data class Address(
     val street: String,

@@ -1,5 +1,7 @@
 package com.jjcdutra.domain.entity
 
+import com.jjcdutra.domain.customer.entity.Customer
+import com.jjcdutra.domain.customer.valueobject.Address
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

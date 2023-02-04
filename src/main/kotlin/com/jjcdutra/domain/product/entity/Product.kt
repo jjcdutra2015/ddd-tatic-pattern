@@ -1,4 +1,4 @@
-package com.jjcdutra.domain.entity
+package com.jjcdutra.domain.product.entity
 
 import java.math.BigDecimal
 

@@ -1,6 +1,6 @@
-package com.jjcdutra.domain.service
+package com.jjcdutra.domain.product.service
 
-import com.jjcdutra.domain.entity.Product
+import com.jjcdutra.domain.product.entity.Product
 
 class ProductService {
     companion object {

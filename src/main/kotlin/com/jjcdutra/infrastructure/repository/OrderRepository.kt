@@ -1,8 +1,8 @@
 package com.jjcdutra.infrastructure.repository
 
-import com.jjcdutra.domain.entity.Order
-import com.jjcdutra.domain.entity.OrderItem
-import com.jjcdutra.domain.repository.OrderRepositoryInterface
+import com.jjcdutra.domain.checkout.entity.Order
+import com.jjcdutra.domain.checkout.entity.OrderItem
+import com.jjcdutra.domain.checkout.repository.OrderRepositoryInterface
 import com.jjcdutra.infrastructure.db.jpa.model.OrderItemModel
 import com.jjcdutra.infrastructure.db.jpa.model.OrderModel
 import org.springframework.stereotype.Service

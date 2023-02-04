@@ -1,6 +1,11 @@
 package com.jjcdutra.infrastructure.repository
 
+import com.jjcdutra.domain.checkout.entity.Order
+import com.jjcdutra.domain.checkout.entity.OrderItem
+import com.jjcdutra.domain.customer.entity.Customer
+import com.jjcdutra.domain.customer.valueobject.Address
 import com.jjcdutra.domain.entity.*
+import com.jjcdutra.domain.product.entity.Product
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

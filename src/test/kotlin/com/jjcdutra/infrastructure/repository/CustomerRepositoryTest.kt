@@ -1,7 +1,7 @@
 package com.jjcdutra.infrastructure.repository
 
-import com.jjcdutra.domain.entity.Address
-import com.jjcdutra.domain.entity.Customer
+import com.jjcdutra.domain.customer.valueobject.Address
+import com.jjcdutra.domain.customer.entity.Customer
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

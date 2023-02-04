@@ -1,12 +1,12 @@
-package com.jjcdutra.domain.entity
+package com.jjcdutra.domain.checkout.entity
 
 import java.math.BigDecimal
 
 class Order(
-    val id: String,
-    val customerId: String,
-    var items: List<OrderItem> = listOf(),
-    var total: BigDecimal = BigDecimal.ZERO
+        val id: String,
+        val customerId: String,
+        var items: List<OrderItem> = listOf(),
+        var total: BigDecimal = BigDecimal.ZERO
 ) {
 
     init {

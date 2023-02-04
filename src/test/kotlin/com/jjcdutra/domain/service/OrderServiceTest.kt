@@ -1,9 +1,9 @@
 package com.jjcdutra.domain.service
 
-import com.jjcdutra.domain.entity.Customer
-import com.jjcdutra.domain.entity.Order
-import com.jjcdutra.domain.entity.OrderItem
-import com.jjcdutra.domain.service.OrderService
+import com.jjcdutra.domain.customer.entity.Customer
+import com.jjcdutra.domain.checkout.entity.Order
+import com.jjcdutra.domain.checkout.entity.OrderItem
+import com.jjcdutra.domain.checkout.service.OrderService
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.math.BigDecimal

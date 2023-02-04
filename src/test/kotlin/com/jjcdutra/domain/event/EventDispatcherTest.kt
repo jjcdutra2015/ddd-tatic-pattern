@@ -1,7 +1,7 @@
 package com.jjcdutra.domain.event
 
-import com.jjcdutra.domain.event.product.ProductCreatedEvent
-import com.jjcdutra.domain.event.product.handler.SendEmailWhenProductIsCreatedHandler
+import com.jjcdutra.domain.product.event.ProductCreatedEvent
+import com.jjcdutra.domain.product.event.handler.SendEmailWhenProductIsCreatedHandler
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
