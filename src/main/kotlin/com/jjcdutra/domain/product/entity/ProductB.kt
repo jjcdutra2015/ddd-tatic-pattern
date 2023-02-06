@@ -2,11 +2,11 @@ package com.jjcdutra.domain.product.entity
 
 import java.math.BigDecimal
 
-class Product(
-        var id: String,
-        var name: String,
-        var price: BigDecimal
-) : ProductInterface {
+class ProductB(
+    var id: String,
+    var name: String,
+    var price: BigDecimal
+) : ProductInterface{
     init {
         validate()
     }
@@ -34,7 +34,7 @@ class Product(
         validate()
     }
 
-    override fun obtainId(): String {
+    override fun obtainId():String {
         return this.id
     }
 
@@ -43,6 +43,6 @@ class Product(
     }
 
     override fun obtainPrice(): BigDecimal {
-        return this.price
+        return this.price * BigDecimal(2)
     }
 }
