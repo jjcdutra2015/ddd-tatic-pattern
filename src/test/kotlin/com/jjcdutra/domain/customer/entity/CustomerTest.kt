@@ -1,4 +1,4 @@
-package com.jjcdutra.domain.entity
+package com.jjcdutra.domain.customer.entity
 
 import com.jjcdutra.domain.customer.entity.Customer
 import com.jjcdutra.domain.customer.valueobject.Address

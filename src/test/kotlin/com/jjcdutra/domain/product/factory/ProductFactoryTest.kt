@@ -1,8 +1,7 @@
-package com.jjcdutra.domain.factory
+package com.jjcdutra.domain.product.factory
 
 import com.jjcdutra.domain.product.entity.Product
 import com.jjcdutra.domain.product.entity.ProductB
-import com.jjcdutra.domain.product.factory.ProductFactory
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.math.BigDecimal

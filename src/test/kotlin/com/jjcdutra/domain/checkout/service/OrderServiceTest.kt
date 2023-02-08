@@ -1,4 +1,4 @@
-package com.jjcdutra.domain.service
+package com.jjcdutra.domain.checkout.service
 
 import com.jjcdutra.domain.customer.entity.Customer
 import com.jjcdutra.domain.checkout.entity.Order

@@ -1,4 +1,4 @@
-package com.jjcdutra.domain.entity
+package com.jjcdutra.domain.product.entity
 
 import com.jjcdutra.domain.product.entity.Product
 import org.junit.jupiter.api.Assertions.assertEquals

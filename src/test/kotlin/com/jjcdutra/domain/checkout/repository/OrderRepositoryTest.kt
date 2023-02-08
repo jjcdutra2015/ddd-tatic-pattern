@@ -1,10 +1,9 @@
-package com.jjcdutra.infrastructure.repository
+package com.jjcdutra.domain.checkout.repository
 
 import com.jjcdutra.domain.checkout.entity.Order
 import com.jjcdutra.domain.checkout.entity.OrderItem
 import com.jjcdutra.domain.customer.entity.Customer
 import com.jjcdutra.domain.customer.valueobject.Address
-import com.jjcdutra.domain.entity.*
 import com.jjcdutra.domain.product.entity.Product
 import com.jjcdutra.infrastructure.customer.repository.jpa.CustomerModelRepository
 import com.jjcdutra.infrastructure.customer.repository.jpa.CustomerRepository
