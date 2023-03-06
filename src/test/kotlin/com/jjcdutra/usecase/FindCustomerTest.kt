@@ -8,6 +8,7 @@ import com.jjcdutra.infrastructure.customer.repository.jpa.CustomerRepository
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mock
 import org.mockito.Mockito
@@ -63,5 +64,15 @@ class FindCustomerTest {
         val result = usecase.execute(input)
 
         assertEquals(output, result)
+    }
+
+    @Test
+    fun `should throw error when customer not found`() {
+
+        val exception = assertThrows<Exception> {
+            repository.find("1")
+        }
+
+        assertEquals("Customer not found", exception.message)
     }
 }
