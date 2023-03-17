@@ -1,4 +1,4 @@
-package com.jjcdutra.usecase
+package com.jjcdutra.usecase.customer.find
 
 import com.jjcdutra.domain.customer.repository.CustomerRepositoryInterface
 

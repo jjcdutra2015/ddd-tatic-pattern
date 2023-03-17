@@ -1,4 +1,4 @@
-package com.jjcdutra.usecase
+package com.jjcdutra.usecase.customer.create
 
 import com.jjcdutra.domain.customer.entity.Customer
 import com.jjcdutra.domain.customer.valueobject.Address
@@ -8,7 +8,6 @@ import com.jjcdutra.infrastructure.customer.repository.jpa.CustomerRepository
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mock
 import org.mockito.Mockito
@@ -16,7 +15,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 import java.util.*
 
 @ExtendWith(SpringExtension::class)
-class FindCustomerTest {
+class CreateCustomerTest {
 
     @Mock
     private lateinit var repositoryModel: CustomerModelRepository
@@ -29,50 +28,49 @@ class FindCustomerTest {
     }
 
     @Test
-    fun `should find customer use case`() {
+    fun `should create a customer`() {
         val customer = Customer("123", "John")
         val address = Address("street", 1, "zip", "city")
         customer.changeAddress(address)
 
-        Mockito.`when`(repositoryModel.findById("123")).thenReturn(Optional.of(
-                CustomerModel(customer.id,
-                        customer.name,
-                        customer.address!!.street,
-                        customer.address!!.number,
-                        customer.address!!.zip,
-                        customer.address!!.city,
-                        true,
-                        1
-                )
-        ))
+        val model = CustomerModel(
+                customer.id,
+                customer.name,
+                customer.address!!.street,
+                customer.address!!.number,
+                customer.address!!.zip,
+                customer.address!!.city,
+                true,
+                1
+        )
 
-        val input = InputFindCustomerDto("123")
+        Mockito.`when`(repositoryModel.save(model))
 
-        val output = OutputFindCustomerDto(
-                "123",
-                "John",
-                Address(
+        val input = InputCreateCustomerDto(
+                "Name",
+                com.jjcdutra.usecase.customer.create.Address(
                         "street",
-                        "city",
                         1,
+                        "city",
                         "zip"
                 )
         )
 
-        val usecase = FindCustomerUseCase(repository)
+        var output = OutputCreateCustomerDto(
+                "123",
+                "John",
+                com.jjcdutra.usecase.customer.create.Address(
+                        "street",
+                        1,
+                        "city",
+                        "zip"
+                )
+        )
 
-        val result = usecase.execute(input)
+        val usecase = CreateCustomerUseCase(repository)
 
-        assertEquals(output, result)
-    }
+        output = usecase.execute(input)
 
-    @Test
-    fun `should throw error when customer not found`() {
-
-        val exception = assertThrows<Exception> {
-            repository.find("1")
-        }
-
-        assertEquals("Customer not found", exception.message)
+        assertEquals(output, input)
     }
 }
